@@ -1,8 +1,9 @@
 const express = require("express")
-const db = require("../../db")
+const db = require("../../database")
 const product = require("../../../products.json") ///MOMENTANEO
 
 const router = express.Router()
+
 
 router.get("/:_id", async (req, res) => {
     const response = await db.query('SELECT _id, name, description, brand, imageUrl, price FROM "product" WHERE _id = $1',
